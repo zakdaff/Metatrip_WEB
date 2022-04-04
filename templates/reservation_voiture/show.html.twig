@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ReservationVoiture{% endblock %}
+
+{% block body %}
+    <h1>ReservationVoiture</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idrvoit</th>
+                <td>{{ reservation_voiture.idrvoit }}</td>
+            </tr>
+            <tr>
+                <th>PrixRent</th>
+                <td>{{ reservation_voiture.prixRent }}</td>
+            </tr>
+            <tr>
+                <th>Trajet</th>
+                <td>{{ reservation_voiture.trajet }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_reservation_voiture_index') }}">back to list</a>
+
+    <a href="{{ path('app_reservation_voiture_edit', {'idrvoit': reservation_voiture.idrvoit}) }}">edit</a>
+
+    {{ include('reservation_voiture/_delete_form.html.twig') }}
+{% endblock %}

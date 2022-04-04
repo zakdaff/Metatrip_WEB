@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ReservationEvent{% endblock %}
+
+{% block body %}
+    <h1>ReservationEvent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idrev</th>
+                <td>{{ reservation_event.idrev }}</td>
+            </tr>
+            <tr>
+                <th>NbPers</th>
+                <td>{{ reservation_event.nbPers }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_reservation_event_index') }}">back to list</a>
+
+    <a href="{{ path('app_reservation_event_edit', {'idrev': reservation_event.idrev}) }}">edit</a>
+
+    {{ include('reservation_event/_delete_form.html.twig') }}
+{% endblock %}

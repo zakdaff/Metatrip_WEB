@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chauffeur{% endblock %}
+
+{% block body %}
+    <h1>Chauffeur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idch</th>
+                <td>{{ chauffeur.idch }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ chauffeur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ chauffeur.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ chauffeur.photo }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ chauffeur.tel }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ chauffeur.description }}</td>
+            </tr>
+            <tr>
+                <th>Etatdispo</th>
+                <td>{{ chauffeur.etatdispo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_chauffeur_index') }}">back to list</a>
+
+    <a href="{{ path('app_chauffeur_edit', {'idch': chauffeur.idch}) }}">edit</a>
+
+    {{ include('chauffeur/_delete_form.html.twig') }}
+{% endblock %}

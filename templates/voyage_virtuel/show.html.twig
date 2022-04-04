@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}VoyageVirtuel{% endblock %}
+
+{% block body %}
+    <h1>VoyageVirtuel</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idvv</th>
+                <td>{{ voyage_virtuel.idvv }}</td>
+            </tr>
+            <tr>
+                <th>ImageV</th>
+                <td>{{ voyage_virtuel.imageV }}</td>
+            </tr>
+            <tr>
+                <th>Idv</th>
+                <td>{{ voyage_virtuel.idv }}</td>
+            </tr>
+            <tr>
+                <th>Ida</th>
+                <td>{{ voyage_virtuel.ida }}</td>
+            </tr>
+            <tr>
+                <th>Video</th>
+                <td>{{ voyage_virtuel.video }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ voyage_virtuel.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_voyage_virtuel_index') }}">back to list</a>
+
+    <a href="{{ path('app_voyage_virtuel_edit', {'idvv': voyage_virtuel.idvv}) }}">edit</a>
+
+    {{ include('voyage_virtuel/_delete_form.html.twig') }}
+{% endblock %}

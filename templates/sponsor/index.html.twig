@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sponsor index{% endblock %}
+
+{% block body %}
+    <h1>Sponsor index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ids</th>
+                <th>Nomsponsor</th>
+                <th>Tel</th>
+                <th>Email</th>
+                <th>DateSp</th>
+                <th>PrixSp</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sponsor in sponsors %}
+            <tr>
+                <td>{{ sponsor.ids }}</td>
+                <td>{{ sponsor.nomsponsor }}</td>
+                <td>{{ sponsor.tel }}</td>
+                <td>{{ sponsor.email }}</td>
+                <td>{{ sponsor.dateSp ? sponsor.dateSp|date('Y-m-d') : '' }}</td>
+                <td>{{ sponsor.prixSp }}</td>
+                <td>
+                    <a href="{{ path('app_sponsor_show', {'ids': sponsor.ids}) }}">show</a>
+                    <a href="{{ path('app_sponsor_edit', {'ids': sponsor.ids}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_sponsor_new') }}">Create new</a>
+{% endblock %}
