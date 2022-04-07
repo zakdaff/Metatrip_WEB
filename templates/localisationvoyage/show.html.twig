@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Localisationvoyage{% endblock %}
+
+{% block body %}
+    <h1>Localisationvoyage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idlocalisation</th>
+                <td>{{ localisationvoyage.idlocalisation }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ localisationvoyage.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ localisationvoyage.longitude }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_localisationvoyage_index') }}">back to list</a>
+
+    <a href="{{ path('app_localisationvoyage_edit', {'idlocalisation': localisationvoyage.idlocalisation}) }}">edit</a>
+
+    {{ include('localisationvoyage/_delete_form.html.twig') }}
+{% endblock %}
